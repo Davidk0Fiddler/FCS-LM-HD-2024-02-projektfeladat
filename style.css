@@ -16,8 +16,7 @@ body {
     height: 6vh;
     background-color: black;
     text-decoration: none;
-    text-transform: uppercase;
-    
+    text-transform: uppercase; 
     width: 100vw;
     padding: 0;
     display: flex;
@@ -44,4 +43,26 @@ h1 {
     text-transform: uppercase;
     font-weight: bold;
     text-shadow: 2px 2px darkgray, 0 0 25px purple;
+    animation: animacio 10s infinite linear;
+}
+
+@keyframes animacio {
+    0% {
+        text-shadow: 2px 2px darkgray, 0 0 25px red;
+    }
+    20% {
+        text-shadow: 2px 2px darkgray, 0 0 27px orange;
+    }
+    40% {
+        text-shadow: 2px 2px darkgray, 0 0 29px yellow;
+    }
+    60% {
+        text-shadow: 2px 2px darkgray, 0 0 31px green;
+    }
+    80% {
+        text-shadow: 2px 2px darkgray, 0 0 33px blue;
+    }
+    100% {
+        text-shadow: 2px 2px darkgray, 0 0 35px purple;
+    }
 }
