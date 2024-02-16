@@ -2,23 +2,29 @@
     font-family: swiftyy;
     src: url("./Spiegel_TT_Bold.ttf");
 }
-
-body {
-    background-image: url(menuhatter.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    overflow:scroll;
+body{
+    background-color: black;
     overflow-x: hidden;
 }
 
+.body {
+    background-image: url(menuhatter.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 101vw;
+    margin-top: -8px;
+    margin-left: -8px;
+    overflow:scroll;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
 #menu {
-    height: 6vh;
+    height: 7vh;
     background-color: black;
     text-decoration: none;
-    text-transform: uppercase;
-    
-    width: 100vw;
+    text-transform: uppercase; 
+    width: 101vw;
     padding: 0;
     display: flex;
     justify-content: space-evenly;
@@ -26,10 +32,11 @@ body {
     margin-left: -1vw;
     font-size: 22px;
     font-family: swiftyy;
+    position: fixed;
 }
 
 .menubar {
-    margin-top: 0.7%;  
+    margin-top: 1.3%;  
 }
 
 a {
@@ -44,4 +51,65 @@ h1 {
     text-transform: uppercase;
     font-weight: bold;
     text-shadow: 2px 2px darkgray, 0 0 25px purple;
+    animation: animacio 10s infinite linear;
 }
+
+@keyframes animacio {
+    0% {
+        text-shadow: 2px 2px darkgray, 0 0 25px red;
+    }
+    20% {
+        text-shadow: 2px 2px darkgray, 0 0 27px orange;
+    }
+    40% {
+        text-shadow: 2px 2px darkgray, 0 0 29px yellow;
+    }
+    60% {
+        text-shadow: 2px 2px darkgray, 0 0 31px green;
+    }
+    80% {
+        text-shadow: 2px 2px darkgray, 0 0 33px blue;
+    }
+    100% {
+        text-shadow: 2px 2px darkgray, 0 0 35px purple;
+    }
+}
+
+
+.goverment{
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 35vh;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(255,255,255,0.8);
+    transition: 0.3s;
+    background-color: rgba(255,255,255,0.8);
+
+  }
+
+.card h4{
+    margin-top: 5px;
+    font-size: 50px;
+    text-align: center;
+    font-style:normal;
+    font-weight: 900;
+
+}
+
+.card p{
+    margin-top: -30px;
+    font-size: 40px;
+    text-align: center;
+}
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(255,255,255,0.8);
+  }
