@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beköltözés</title>
     <link rel="stylesheet" href="bekoltozes.css">
+    
 </head>
 <body>
     <div id="menu">
@@ -14,6 +15,11 @@
         <div class="menubar"><a href="muzeumok.html">Múzeumok/Éttermek</a></div>
         <div class="menubar"><a href="bekoltozes.html">Beköltözés</a></div>     
     </div>
+    <h1 id="kiiras"></h1>
     
+    <script>
+        var nev=prompt("Adja meg a nevét:")
+        document.getElementById("kiiras").innerHTML="Kedves "+ nev +" !";
+    </script>
 </body>
 </html>
