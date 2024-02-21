@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beköltözés</title>
     <link rel="stylesheet" href="bekoltozes.css">
+    
 </head>
 <body>
     <div id="menu">
@@ -14,6 +15,321 @@
         <div class="menubar"><a href="muzeumok.html">Múzeumok/Éttermek</a></div>
         <div class="menubar"><a href="bekoltozes.html">Beköltözés</a></div>     
     </div>
+    <h1 id="kiiras"></h1>
     
+    <div class="hotelcards" id="hotelcards">
+        <div class="hotelcard" id="hotelcard1"><div class="overlay">Starlit Taylor Towers</div></div>
+        <div class="hotelcard" id="hotelcard2"><div class="overlay">Swift Serenade Suites</div></div>
+        <div class="hotelcard" id="hotelcard3"><div class="overlay">Enchanted Harmony Hotel</div></div>
+    </div>
+    <div class="formcontainer" id="formcontainer">
+        <div class="button" id="backbtn" style="float:left; font-size: 30px; margin-left: 15px; margin-top: 15px;">←</div>
+        <h2 style="text-align: center; font-family: swiftyy; font-size: 30px; margin-top: 30px;">Beköltözési lehetőség információ</h2>
+        <table>
+            <tr>
+                <td rowspan="4" style="width: 38vw; text-align: center;">
+                    <h3 style="font-size: 30px; margin-top: -7vh;" id="hotelnev"></h3>
+                    <div class="infok">
+                        <h4 style="font-size: 20px;">A lakás információk:</h5>
+                        <div class="wholelakasinfok" style="column-count: 2; height: 40vh; margin-top: -5vh;">
+                            <div class="lakasinfok" style="column-count: 2; height: 40vh;">
+                                <div class="infoa" style="margin-top: 33px; font-family: swiftyy;" >
+                                <p>Ingatlan állapota</p>
+                                <p>Építési éve</p>
+                                <p>Komfort</p>
+                                <p>Emelet</p>
+                                <p>Épület szintjei</p>
+                                <p>Lift</p>
+                                <p>Belmagasság</p>
+                                <p>Légkondícionáló</p>
+                                </div>
+                                <br>
+                                <div class="infob" style="font-family: swiftyy; font-weight: 100; color: gray;">
+                                <p style="margin-bottom: 18px; color: black;" id="ingatlanallapota"></p>
+                                <p id="épiteseve"></p>
+                                <p style="color: black;" id="komfort"></p>
+                                <p style="color: black;" id="emelet"></p>
+                                <p style="color: black;" id="epületszintjei"></p>
+                                <p style="color: black;" id="lift"></p>
+                                <p id="belmagassag"></p>
+                                <p style="color: black;" id="legkondicionalo"></p>
+                                </div>
+                            </div>
+                            <div class="lakasinfok" style="column-count: 2; height: 40vh;">
+                                <div class="infoa" style="margin-top: 33px; font-family: swiftyy;" >
+                                <p>Akadálymentesített</p>
+                                <p>Fürdő és wc</p>
+                                <p>Tájolás</p>
+                                <p>Kilátás</p>
+                                <p>Erkély mérete</p>
+                                <p>Kertkapcsolatos</p>
+                                <p>Tetőtér</p>
+                                <p>Parkolás</p>
+                                </div>
+                                <br>
+                                <div class="infob" style="font-family: swiftyy; font-weight: 100; color: gray;">
+                                <p style="margin-bottom: 18px; color: black;" id="akadalymentesitett"></p>
+                                <p style="color: black;" id="fürdöéswc"></p>
+                                <p style="color: black;" id="tajolas"></p>
+                                <p style="color: black;" id="kilatas"></p>
+                                <p id="erkélymérete"></p>
+                                <p id="kertkapcsolatos"></p>
+                                <p id="tetoter"></p>
+                                <p style="color: black;" id="parkolas"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="font-family: swiftyy; margin-top: -40px;">További információk:</p>
+                        <div class="tovabbiinfok" style="column-count: 2; font-family: swiftyy; width: 100%; margin-left: 100px;">
+                            <p style="margin-top: 3px; width: 50%;">tel.:  <i style="font-style: normal;" id="tel"></i></p>
+                            <p style="margin-left: -300px;">email: <i style="font-style: normal;" id="email"></i></p>
+                        </div>
+                        <div class="kepek" id="kepek1" style="display: flex; justify-content: space-around;">
+                              <div class="responsive"><div class="gallery" id="pic1"></div></div>
+                              <div class="responsive"><div class="gallery" id="pic2"></div></div>
+                              <div class="responsive"><div class="gallery" id="pic3"></div></div>
+                              <div class="responsive"><div class="gallery" id="pic4"></div></div>
+                        </div>
+                </td>
+                <td rowspan="3" id="hotelheroimg">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        <br>
+    </div>
+    <script>
+        let hotelszam = 0;
+        const hotelnevmezo = document.getElementById('hotelnev');
+        const ingatlanallapotamezo = document.getElementById('ingatlanallapota');
+        const építésiévemező = document.getElementById('épiteseve');
+        const komfortmezo = document.getElementById('komfort');
+        const emeletmezo = document.getElementById('emelet');
+        const epületszintjeimezo = document.getElementById('epületszintjei');
+        const liftmezo = document.getElementById('lift');
+        const belmagassagmezo = document.getElementById('belmagassag'); 
+        const legkondicionalomezo = document.getElementById('legkondicionalo');
+        const akadalymentesitettmezo = document.getElementById('akadalymentesitett');
+        const fürdöéswcmezo = document.getElementById('fürdöéswc');
+        const tajolasmezo = document.getElementById('tajolas');
+        const kilatasmezo = document.getElementById('kilatas');
+        const erkelymeretemezo = document.getElementById('erkélymérete');
+        const kertkapcsolatosmezo = document.getElementById('kertkapcsolatos');
+        const tetotermezo = document.getElementById('tetoter');
+        const parkolasmezo = document.getElementById('parkolas')
+        const pic1mezo = document.getElementById('pic1');
+        const pic2mezo = document.getElementById('pic2');
+        const pic3mezo = document.getElementById('pic3');
+        const pic4mezo = document.getElementById('pic4');
+        const telmezo = document.getElementById('tel');
+        const emailmezo = document.getElementById('email');
+        const hotelheroimgmezo = document.getElementById('hotelheroimg');
+
+        const hotel1adatok = {
+          nev: "Starlit Taylor Towers",
+          ingatlanallapota: "újépítésű",
+          építésiéve: "nincs megadva",
+          komfort: "komfortos",
+          emelet: "választható",
+          épületszintjei: "1",
+          lift: "van",
+          belmagassag: "nincs megadva",
+          legkondicionalo: "van",
+          akadálymentesített: "nem",
+          fürdőéswc: "egy helyiségben",
+          tajolas: "észak",
+          kilatas: "utcára néz",
+          erkélymérete: "nincs megadva",
+          kertkapcsolatos: "nincs megadva",
+          tetoter: "nincs megadva",
+          parkolas: "privát mélygarázs",
+          img1: '"./hotels-images/hotel1/img1.jpeg"',
+          img2: '"./hotels-images/hotel1/img2.jpeg"',
+          img3: '"./hotels-images/hotel1/img3.jpeg"',
+          img4: '"./hotels-images/hotel1/img4.jpeg"',
+          tel: "+1 389 1750389",
+          email: "starlittaylortowerseladolakas@gmail.com",
+          heroimg: 'url("./hotels-images/hotel1/card.png")'
+        }
+
+        const hotel2adatok = {
+          nev: "Swift Serenade Suites",
+          ingatlanallapota: "újépítésű",
+          építésiéve: "nincs megadva",
+          komfort: "komfortos",
+          emelet: "2, 3",
+          épületszintjei: "1",
+          lift: "van",
+          belmagassag: "nincs megadva",
+          legkondicionalo: "van",
+          akadálymentesített: "nem",
+          fürdőéswc: "egy helyiségben",
+          tajolas: "kelet",
+          kilatas: "belső udvarra néz",
+          erkélymérete: "nincs megadva",
+          kertkapcsolatos: "nincs megadva",
+          tetoter: "nincs megadva",
+          parkolas: "belső parkoló",
+          img1: '"./hotels-images/hotel2/img1.jpg"',
+          img2: '"./hotels-images/hotel2/img2.jpg"',
+          img3: '"./hotels-images/hotel2/img3.jpg"',
+          img4: '"./hotels-images/hotel2/img4.jpg"',
+          tel: "+1 725 1487265",
+          email: "swiftserenadesuiteseladolakas@gmail.com",
+          heroimg: 'url("./hotels-images/hotel2/card.png")'
+        }
+
+
+        const hotel3adatok = {
+          nev: "Enchanted Harmony Hotel",
+          ingatlanallapota: "újépítésű",
+          építésiéve: "nincs megadva",
+          komfort: "komfortos",
+          emelet: "5, 6, 7",
+          épületszintjei: "1",
+          lift: "van",
+          belmagassag: "nincs megadva",
+          legkondicionalo: "van",
+          akadálymentesített: "nem",
+          fürdőéswc: "külön helyiségben",
+          tajolas: "dél",
+          kilatas: "utcára néz",
+          erkélymérete: "nincs megadva",
+          kertkapcsolatos: "nincs megadva",
+          tetoter: "nincs megadva",
+          parkolas: "privát mélygarázs",
+          img1: '"./hotels-images/hotel3/img1.jpeg"',
+          img2: '"./hotels-images/hotel3/img2.jpeg"',
+          img3: '"./hotels-images/hotel3/img3.jpeg"',
+          img4: '"./hotels-images/hotel3/img4.jpeg"',
+          tel: "+1 912 8247681",
+          email: "enchantedharmonyhoteleladolakas@gmail.com",
+          heroimg: 'url("./hotels-images/hotel3/card.png")'
+        }
+
+        function filling(hotelszambe){
+          document.getElementById('hotelcards').style.animation = 'eltunes 1s forwards';
+          setTimeout(function(){ document.getElementById('hotelcards').style.display = 'none';}, 1000)
+          setTimeout(function(){document.getElementById('formcontainer').style.display = 'block';}, 1001)
+          document.getElementById('formcontainer').style.animation = "eltones 1s forwards";
+          
+          switch(hotelszam){
+            case 1: 
+              hotelnevmezo.innerText = hotel1adatok.nev;
+              ingatlanallapotamezo.innerText = hotel1adatok.ingatlanallapota;
+              komfortmezo.innerText = hotel1adatok.komfort;
+              emeletmezo.innerText = hotel1adatok.emelet;
+              liftmezo.innerText = hotel1adatok.lift;
+              belmagassagmezo.innerText = hotel1adatok.belmagassag;
+              legkondicionalomezo.innerText = hotel1adatok.legkondicionalo;
+              akadalymentesitettmezo.innerText = hotel1adatok.akadálymentesített;
+              fürdöéswcmezo.innerText = hotel1adatok.fürdőéswc;
+              tajolasmezo.innerText = hotel1adatok.tajolas;
+              kilatasmezo.innerText = hotel1adatok.kilatas;
+              erkelymeretemezo.innerText = hotel1adatok.erkélymérete;
+              kertkapcsolatosmezo.innerText = hotel1adatok.kertkapcsolatos;
+              tetotermezo.innerText = hotel1adatok.tetoter;
+              parkolasmezo.innerText = hotel1adatok.parkolas;
+              telmezo.innerText = hotel1adatok.tel;
+              emailmezo.innerText = hotel1adatok.email;
+              hotelheroimgmezo.style.backgroundImage =  hotel1adatok.heroimg
+              építésiévemező.innerText = hotel1adatok.építésiéve;
+              epületszintjeimezo.innerText = hotel1adatok.epületszintjei;
+              pic1mezo.innerHTML = `<a target="_blank" href=${hotel1adatok.img1}><img src=${hotel1adatok.img1} alt="Cinque Terre"></a>`
+              pic2mezo.innerHTML = `<a target="_blank" href=${hotel1adatok.img2}><img src=${hotel1adatok.img2} alt="Cinque Terre"></a>`
+              pic3mezo.innerHTML = `<a target="_blank" href=${hotel1adatok.img3}><img src=${hotel1adatok.img3} alt="Cinque Terre"></a>`
+              pic4mezo.innerHTML = `<a target="_blank" href=${hotel1adatok.img4}><img src=${hotel1adatok.img4} alt="Cinque Terre"></a>`
+
+              break;
+            case 2: 
+              hotelnevmezo.innerText = hotel2adatok.nev;
+              ingatlanallapotamezo.innerText = hotel2adatok.ingatlanallapota;
+              komfortmezo.innerText = hotel2adatok.komfort;
+              emeletmezo.innerText = hotel2adatok.emelet;
+              liftmezo.innerText = hotel2adatok.lift;
+              belmagassagmezo.innerText = hotel2adatok.belmagassag;
+              legkondicionalomezo.innerText = hotel2adatok.legkondicionalo;
+              akadalymentesitettmezo.innerText = hotel2adatok.akadálymentesített;
+              fürdöéswcmezo.innerText = hotel2adatok.fürdőéswc;
+              tajolasmezo.innerText = hotel2adatok.tajolas;
+              kilatasmezo.innerText = hotel2adatok.kilatas;
+              erkelymeretemezo.innerText = hotel2adatok.erkélymérete;
+              kertkapcsolatosmezo.innerText = hotel2adatok.kertkapcsolatos;
+              tetotermezo.innerText = hotel2adatok.tetoter;
+              parkolasmezo.innerText = hotel2adatok.parkolas;
+              telmezo.innerText = hotel2adatok.tel;
+              emailmezo.innerText = hotel2adatok.email;
+              hotelheroimgmezo.style.backgroundImage = hotel2adatok.heroimg
+              építésiévemező.innerText = hotel2adatok.építésiéve;
+              epületszintjeimezo.innerText = hotel2adatok.epületszintjei;
+              pic1mezo.innerHTML = `<a target="_blank" href=${hotel2adatok.img1}><img src=${hotel2adatok.img1} alt="Cinque Terre"></a>`
+              pic2mezo.innerHTML = `<a target="_blank" href=${hotel2adatok.img2}><img src=${hotel2adatok.img2} alt="Cinque Terre"></a>`
+              pic3mezo.innerHTML = `<a target="_blank" href=${hotel2adatok.img3}><img src=${hotel2adatok.img3} alt="Cinque Terre"></a>`
+              pic4mezo.innerHTML = `<a target="_blank" href=${hotel2adatok.img4}><img src=${hotel2adatok.img4} alt="Cinque Terre"></a>`
+              break;
+            case 3: 
+              hotelnevmezo.innerText = hotel3adatok.nev;
+              ingatlanallapotamezo.innerText = hotel3adatok.ingatlanallapota;
+              komfortmezo.innerText = hotel3adatok.komfort;
+              emeletmezo.innerText = hotel3adatok.emelet;
+              liftmezo.innerText = hotel3adatok.lift;
+              belmagassagmezo.innerText = hotel3adatok.belmagassag;
+              legkondicionalomezo.innerText = hotel3adatok.legkondicionalo;
+              akadalymentesitettmezo.innerText = hotel3adatok.akadálymentesített;
+              fürdöéswcmezo.innerText = hotel3adatok.fürdőéswc;
+              tajolasmezo.innerText = hotel3adatok.tajolas;
+              kilatasmezo.innerText = hotel3adatok.kilatas;
+              erkelymeretemezo.innerText = hotel3adatok.erkélymérete;
+              kertkapcsolatosmezo.innerText = hotel3adatok.kertkapcsolatos;
+              tetotermezo.innerText = hotel3adatok.tetoter;
+              parkolasmezo.innerText = hotel3adatok.parkolas;
+              telmezo.innerText = hotel3adatok.tel;
+              emailmezo.innerText = hotel3adatok.email;
+              hotelheroimgmezo.style.backgroundImage = hotel3adatok.heroimg
+              építésiévemező.innerText = hotel3adatok.építésiéve;
+              epületszintjeimezo.innerText = hotel3adatok.epületszintjei;
+              pic1mezo.innerHTML = `<a target="_blank" href=${hotel3adatok.img1}><img src=${hotel3adatok.img1} alt="Cinque Terre"></a>`
+              pic2mezo.innerHTML = `<a target="_blank" href=${hotel3adatok.img2}><img src=${hotel3adatok.img2} alt="Cinque Terre"></a>`
+              pic3mezo.innerHTML = `<a target="_blank" href=${hotel3adatok.img3}><img src=${hotel3adatok.img3} alt="Cinque Terre"></a>`
+              pic4mezo.innerHTML = `<a target="_blank" href=${hotel3adatok.img4}><img src=${hotel3adatok.img4} alt="Cinque Terre"></a>`
+              break;
+          }
+        }
+
+        document.getElementById('hotelcard1').onclick = function() {
+          hotelszam = 1;
+          filling(hotelszam);
+        }
+        document.getElementById('hotelcard2').onclick = function() {
+          hotelszam = 2;
+          filling(hotelszam);
+        }
+        document.getElementById('hotelcard3').onclick = function() {
+          hotelszam = 3;
+          filling(hotelszam);
+        }
+
+        document.getElementById('backbtn').onclick = function(){
+          document.getElementById('formcontainer').style.animation = 'eltunes 1s forwards';
+          setTimeout(function(){ document.getElementById('formcontainer').style.display = 'none';}, 1000)
+          setTimeout(function(){document.getElementById('hotelcards').style.display = 'flex';}, 1001)
+          document.getElementById('hotelcards').style.animation = "eltones 1s forwards";
+          
+        }
+
+
+        var nev=prompt("Adja meg a nevét:")
+        document.getElementById("kiiras").innerHTML="Kedves "+ nev +" !";
+
+       
+
+        /* 
+       
+        */
+
+
+
+
+    </script>
 </body>
 </html>

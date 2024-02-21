@@ -1,16 +1,30 @@
+@font-face {
+    font-family: swiftyy;
+    src: url("./Spiegel_TT_Bold.ttf");
+}
+
+body {
+    width: 100%;
+    background-image: url(bekoltmenuhatter.jpg);
+    background-repeat: n repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 #menu {
     height: 6vh;
     background-color: black;
     text-decoration: none;
-    text-transform: capitalize;
-    font-weight: bold;
-    width: 100vw;
+    text-transform: uppercase;
+    width: 101vw;
     padding: 0;
     display: flex;
     justify-content: space-evenly;
     margin-top: -1vh;
     margin-left: -1vw;
     font-size: 25px;
+    font-family: swiftyy;
 }
 
 .menubar {
@@ -20,4 +34,177 @@
 a {
     color: white;
     text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    font-family: swiftyy;
+    text-transform: uppercase;
+}
+
+/* Hotelcards */ 
+
+.hotelcards {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.hotelcard {
+    height: 80vh;
+}
+
+.overlay {
+    position: fixed;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.8); 
+    color: #f1f1f1;
+    width: 22.93vw;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    padding: 20px;
+    text-align: center;  
+    margin-bottom: 0px;
+    font-size: 30px;
+}
+
+.hotelcard:hover .overlay {
+    opacity: 1;
+}
+
+/* Hotelcard1 */
+#hotelcard1{
+    background: url("./hotels-images/hotel1/card.png");
+    webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    width: 25vw;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1 ), 0 12px 40px 0 rgba(0, 0, 0, 1);
+    border-radius: 25px;
+    overflow: hidden;
+    font-family: swiftyy;
+}
+  
+
+
+#hotelcard1:hover{
+    animation: hoveranimation 1s forwards;
+    cursor: pointer;
+}
+
+@keyframes hoveranimation {
+    0%{
+        webkit-filter: grayscale(100%); 
+        filter: grayscale(100%);
+    }
+    100%{
+        webkit-filter: none; 
+        filter: none;
+    }
+}
+
+
+/* Hotelcard2 */
+#hotelcard2{
+    width: 25vw;
+    background: url("./hotels-images/hotel2/card.png");
+    webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1 ), 0 12px 40px 0 rgba(0, 0, 0, 1);
+    border-radius: 25px;
+    overflow: hidden;
+    font-family: swiftyy;
+}
+  
+#hotelcard2:hover{
+    animation: hoveranimation 1s forwards;
+    cursor: pointer;
+
+}
+
+@keyframes hoveranimation {
+    0%{
+        webkit-filter: grayscale(100%); 
+        filter: grayscale(100%);
+    }
+    100%{
+        webkit-filter: none; 
+        filter: none;
+    }
+}
+
+/* Hotelcard3 */
+#hotelcard3{
+    background: url("./hotels-images/hotel3/card.png");
+    webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    width: 25vw;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1 ), 0 12px 40px 0 rgba(0, 0, 0, 1);
+    border-radius: 25px;
+    overflow: hidden;
+    font-family: swiftyy;
+}
+  
+#hotelcard3:hover{
+    animation: hoveranimation 1s forwards;
+    cursor: pointer;
+
+}
+
+@keyframes hoveranimation {
+    0%{
+        webkit-filter: grayscale(100%); 
+        filter: grayscale(100%);
+    }
+    100%{
+        webkit-filter: none; 
+        filter: none;
+        transform: scale(1.05);
+    }
+}
+
+/*formcontainer */
+
+.formcontainer {
+    display: none;
+    width: 60vw;
+    background-color: #f1f1f1;
+    margin: auto;
+    border-radius: 25px;
+}
+
+#hotelheroimg{
+    width: 20vw;
+    height: 60vh;
+    background-size: cover;
+    padding-bottom: 10vh;
+    border-radius: 25px;
+    
+}
+
+.gallery img{
+    max-width: 50%;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+@keyframes eltunes {
+    0% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes eltones {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
